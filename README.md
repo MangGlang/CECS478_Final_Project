@@ -64,3 +64,5 @@ The OSI encapsulation Explorer will follow a modular design with three component
 - Encapsulation Parser – Extracts headers and reconstructs OSI layers using Python libraries such as dpkt or pyshark. This component will map protocols to OSI layers (e.g., IP = Layer 3, TCP = Layer 4) and provide structured data for visualization.
 - Visualization & Exporter – Displays results in a simple terminal interface and exports summaries to CSV and JSON formats. 
 
+
+![Architecture Diagram](assets/architecture_diagram.png)
