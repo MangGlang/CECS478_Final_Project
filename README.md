@@ -66,3 +66,13 @@ The OSI encapsulation Explorer will follow a modular design with three component
 
 
 ![Architecture Diagram](assets/architecture_diagram.png)
+
+
+## Quick Commands
+| Command | Description |
+|----------|-------------|
+| `make bootstrap` | Build and start containers |
+| `make up` | Start existing containers |
+| `make down` | Stop containers |
+| `make clean` | Remove all containers, images, and volumes |
+| `make help` | List all available commands |
