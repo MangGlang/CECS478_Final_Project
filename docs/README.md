@@ -68,7 +68,7 @@ The OSI encapsulation Explorer will follow a modular design with three component
 - Visualization & Exporter – Displays results in a simple terminal interface and exports summaries to CSV and JSON formats. 
 
 
-![Architecture Diagram](assets/architecture_diagram.png)
+![Architecture Diagram](https://raw.githubusercontent.com/MangGlang/CECS478_Final_Project/main/assets/architecture_diagram.png)
 
 
 ## Quick Commands
