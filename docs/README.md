@@ -1,5 +1,8 @@
 # OSI Encapsulation Explorer – CECS 478 Final Project
 
+### Vertical Slide Demo 
+![Demo GIF](assets/demo.gif)
+
 ### 1. Problem Statement
 
 Understanding how data travels through the layers of the OSI model is one of the foundational concepts in networking. This process is often overlooked as students and analysts tend to observe the outcome of packets on a network rather than the layered transformations that occur along the way. The goal of this project is to design an **interactive system** that visually demonstrates how network packets are **encapsulated and decapsulated** as they pass through the OSI layers. The system will parse network data, show each encapsulation step, and optionally export these steps into a JSON or CSV format for further analysis. By building this tool, we aim to provide a clear and reproducible educational demonstration of OSI-layer encapsulation using real or simulated traffic.
