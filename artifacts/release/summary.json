@@ -1,0 +1,55 @@
+{
+  "packets": [
+    {
+      "packet_idx": 0,
+      "protocols": [
+        {
+          "protocol": "ETH"
+        },
+        {
+          "protocol": "IP"
+        },
+        {
+          "protocol": "TCP"
+        },
+        {
+          "protocol": "HTTP"
+        }
+      ]
+    },
+    {
+      "packet_idx": 1,
+      "protocols": [
+        {
+          "protocol": "ETH"
+        },
+        {
+          "protocol": "IP"
+        },
+        {
+          "protocol": "TCP"
+        },
+        {
+          "protocol": "HTTP"
+        }
+      ]
+    },
+    {
+      "packet_idx": 2,
+      "protocols": [
+        {
+          "protocol": "ETH"
+        },
+        {
+          "protocol": "IP"
+        },
+        {
+          "protocol": "TCP"
+        },
+        {
+          "protocol": "HTTP"
+        }
+      ]
+    }
+  ]
+}

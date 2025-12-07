@@ -1,0 +1,3 @@
+2025-12-06 23:08:28,301 [INFO] Starting OSI demo parser.
+2025-12-06 23:08:28,301 [INFO] PCAP (placeholder) path: artifacts/pcaps/sample.pcap
+2025-12-06 23:08:28,303 [INFO] Finished OSI demo parser. Wrote JSON, CSV, and log.
