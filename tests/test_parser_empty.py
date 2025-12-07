@@ -1,4 +1,12 @@
 from pathlib import Path
+import sys
+import json
+
+# Ensure project root is on sys.path
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from src import parser
 
 
@@ -19,12 +27,20 @@ def test_analyze_empty_packets(tmp_path: Path):
     assert json_path.exists()
     assert csv_path.exists()
 
-    json_text = json_path.read_text()
+    # --- JSON checks ---
+    data = json.loads(json_path.read_text())
+
+    # meta should indicate zero packets and no protocols
+    assert data["meta"]["total_packets"] == 0
+    assert data["meta"]["unique_protocols"] == []
+    assert data["meta"]["protocol_counts"] == {}
+
+    # packets list should be empty
+    assert data["packets"] == []
+
+    # --- CSV checks ---
     csv_text = csv_path.read_text()
-
-    # JSON should contain an empty packets list
-    assert '"packets": []' in json_text.replace("\n", "").replace(" ", "")
-
-    # CSV should have only the header
     lines = [line.strip() for line in csv_text.splitlines() if line.strip()]
+
+    # Only header row should be present
     assert lines == ["protocol,count"]
