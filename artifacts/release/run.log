@@ -1,3 +1,10 @@
-2025-12-06 23:08:28,301 [INFO] Starting OSI demo parser.
-2025-12-06 23:08:28,301 [INFO] PCAP (placeholder) path: artifacts/pcaps/sample.pcap
-2025-12-06 23:08:28,303 [INFO] Finished OSI demo parser. Wrote JSON, CSV, and log.
+2025-12-07 09:40:36,593 [INFO] Starting OSI demo parser.
+2025-12-07 09:40:36,594 [INFO] PCAP (placeholder) path: artifacts/pcaps/sample.pcap
+2025-12-07 09:40:36,594 [INFO] ECHO: preparing synthetic traffic using pcap path artifacts/pcaps/sample.pcap
+2025-12-07 09:40:36,595 [INFO] ENCRYPT: applying demo encryption step (placeholder) for artifacts/pcaps/sample.pcap
+2025-12-07 09:40:36,595 [INFO] CAPTURE: parsing packets from artifacts/pcaps/sample.pcap (simulated)
+2025-12-07 09:40:36,595 [INFO] CAPTURE: produced 3 synthetic packets
+2025-12-07 09:40:36,596 [INFO] ANALYZE: writing JSON summary to artifacts/release/summary.json
+2025-12-07 09:40:36,602 [INFO] ANALYZE: computing protocol counts and writing CSV to artifacts/release/summary.csv
+2025-12-07 09:40:36,608 [INFO] ANALYZE: protocol counts = {'ETH': 3, 'IP': 3, 'TCP': 3, 'HTTP': 3}
+2025-12-07 09:40:36,608 [INFO] Finished OSI demo parser. Wrote JSON, CSV, and log.

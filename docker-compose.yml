@@ -4,3 +4,5 @@ services:
     user: "1000:1000"
     working_dir: /work
     command: python src/parser.py
+    volumes:
+      - ./artifacts:/work/artifacts

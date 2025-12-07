@@ -21,7 +21,7 @@ bootstrap:
 
 ## up: Start existing containers (build images if needed)
 up:
-	$(COMPOSE) up -d
+	$(COMPOSE) build
 
 ## down: Stop all running containers
 down:

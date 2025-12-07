@@ -7,12 +7,34 @@ import os
 from pathlib import Path
 
 
-def fake_parse_packets():
+def fake_echo(pcap_path: str) -> str:
     """
-    Fake parser for now:
-    Pretends we have 3 packets with the same protocol stack.
-    Later we will replace this with real pcap parsing.
+    ECHO stage
+    In a real system this might receive or generate traffic.
+    For now we just log that we're 'echoing' a synthetic pcap path.
     """
+    logging.info("ECHO: preparing synthetic traffic using pcap path %s", pcap_path)
+    return pcap_path
+
+
+def fake_encrypt(pcap_path: str) -> str:
+    """
+    ENCRYPT stage
+    In a real system this would encrypt payloads.
+    For now we just log that encryption would happen here.
+    """
+    logging.info("ENCRYPT: applying demo encryption step (placeholder) for %s", pcap_path)
+    # We could return a different path or metadata later; for now, just return the same.
+    return pcap_path
+
+
+def fake_capture_packets(pcap_path: str):
+    """
+    CAPTURE stage
+    In a real system this would capture packets from the network or read from a pcap file.
+    For now we just fake 3 packets with the same protocol stack.
+    """
+    logging.info("CAPTURE: parsing packets from %s (simulated)", pcap_path)
     packets = []
     for i in range(3):
         protocols = ["ETH", "IP", "TCP", "HTTP"]
@@ -20,10 +42,12 @@ def fake_parse_packets():
             "packet_idx": i,
             "protocols": protocols
         })
+    logging.info("CAPTURE: produced %d synthetic packets", len(packets))
     return packets
 
 
 def write_json(packets, out_json_path: Path):
+    logging.info("ANALYZE: writing JSON summary to %s", out_json_path)
     data = {"packets": []}
     for p in packets:
         data["packets"].append({
@@ -36,6 +60,7 @@ def write_json(packets, out_json_path: Path):
 
 
 def write_csv(packets, out_csv_path: Path):
+    logging.info("ANALYZE: computing protocol counts and writing CSV to %s", out_csv_path)
     # Simple metric: count how many times each protocol appears
     counts = {}
     for p in packets:
@@ -47,6 +72,7 @@ def write_csv(packets, out_csv_path: Path):
         f.write("protocol,count\n")
         for proto, count in sorted(counts.items()):
             f.write(f"{proto},{count}\n")
+    logging.info("ANALYZE: protocol counts = %s", counts)
 
 
 def main():
@@ -85,18 +111,25 @@ def main():
     logging.info("Starting OSI demo parser.")
     logging.info("PCAP (placeholder) path: %s", args.pcap)
 
-    # For now, we do NOT actually read the pcap.
-    # We just simulate packets.
-    packets = fake_parse_packets()
+    # ----- Vertical slice pipeline: echo -> encrypt -> capture -> analyze -----
 
-    # Write outputs
+    # ECHO stage
+    echoed_pcap = fake_echo(args.pcap)
+
+    # ENCRYPT stage (placeholder)
+    encrypted_pcap = fake_encrypt(echoed_pcap)
+
+    # CAPTURE stage (simulated packet parsing)
+    packets = fake_capture_packets(encrypted_pcap)
+
+    # ANALYZE stage (write JSON + CSV summaries)
     json_path = Path(args.out_json)
     csv_path = Path(args.out_csv)
     write_json(packets, json_path)
     write_csv(packets, csv_path)
 
-    # Also print to console for your demo
     print("=== OSI Encapsulation Explorer (demo) ===")
+    print("Pipeline: echo -> encrypt -> capture -> analyze")
     for p in packets:
         stack = " -> ".join(p["protocols"])
         print(f"Packet {p['packet_idx']}: {stack}")
