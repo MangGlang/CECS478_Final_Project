@@ -1,7 +1,7 @@
 # OSI Encapsulation Explorer – CECS 478 Final Project
 
 ### Vertical Slide Demo 
-![Demo GIF](assets/demo.gif)
+![Demo GIF](https://imgur.com/a/idgGQSB)
 
 ### 1. Problem Statement
 
