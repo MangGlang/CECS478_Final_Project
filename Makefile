@@ -60,6 +60,10 @@ demo:
 	$(COMPOSE) run --rm $(SERVICE)
 	@echo "Demo complete."
 
+## test: Run unit tests
+test:
+	pytest -vv
+
 ## help: Show available make commands
 help:
 	@echo "Available make commands:"

@@ -1,55 +1,5 @@
 # OSI Encapsulation Explorer – CECS 478 Final Project
 
-This repository contains the **working vertical slice** for our CECS 478 Final Project.  
-The system demonstrates the OSI encapsulation process through a reproducible, Dockerized pipeline:
-
-> **echo → encrypt → capture → analyze**
-
-The vertical slice runs completely inside Docker and produces **JSON, CSV, and log artifacts** under `artifacts/release/`.
-
-## 1. Clone the repository
-
-```bash
-git clone https://github.com/MangGlang/CECS478_Final_Project.git
-cd CECS478_Final_Project
-```
-
-## Run the required commands
-```
-make up && make demo
-```
-
-## Expected Output:
-```
-=== OSI Encapsulation Explorer (demo) ===
-Pipeline: echo -> encrypt -> capture -> analyze
-Packet 0: ETH -> IP -> TCP -> HTTP
-Packet 1: ETH -> IP -> TCP -> HTTP
-Packet 2: ETH -> IP -> TCP -> HTTP
-JSON summary written to: artifacts/release/summary.json
-CSV summary written to: artifacts/release/summary.csv
-Log written to: artifacts/release/run.log
-=========================================
-```
-
-## 2. Where to Find Artifacts
-```
-artifacts/release/run.log
-artifacts/release/summary.json
-artifacts/release/summary.csv
-```
-
-## 3. Testing
-```
-pip install pytest
-pytest
-```
-happy path and negative testing are under "tests" folder
-
-
-
-# Project Details:
-
 ### 1. Problem Statement
 
 Understanding how data travels through the layers of the OSI model is one of the foundational concepts in networking. This process is often overlooked as students and analysts tend to observe the outcome of packets on a network rather than the layered transformations that occur along the way. The goal of this project is to design an **interactive system** that visually demonstrates how network packets are **encapsulated and decapsulated** as they pass through the OSI layers. The system will parse network data, show each encapsulation step, and optionally export these steps into a JSON or CSV format for further analysis. By building this tool, we aim to provide a clear and reproducible educational demonstration of OSI-layer encapsulation using real or simulated traffic.
