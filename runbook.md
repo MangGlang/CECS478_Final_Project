@@ -25,6 +25,17 @@ make up && make demo
 > echo --> encrypt --> capture --> analyze
 - The program prints the packet protocol stacks and writes summary artifacts.
 
+## 3.1 Only if Permission Error
+- Run this command if you obtain a permission denied error 
+```
+sudo chown -R 1000:1000 .
+```
+- Now make clean: to clean container
+- Build again
+```
+make up && make demo
+```
+
 ## 4. Expected Console Output
 ```
 === OSI Encapsulation Explorer (demo) ===
