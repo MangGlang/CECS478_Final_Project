@@ -48,15 +48,33 @@ def fake_capture_packets(pcap_path: str):
 
 def write_json(packets, out_json_path: Path):
     logging.info("ANALYZE: writing JSON summary to %s", out_json_path)
-    data = {"packets": []}
+
+    # Compute simple metrics
+    total_packets = len(packets)
+    protocol_counts = {}
+    for p in packets:
+        for proto in p["protocols"]:
+            protocol_counts[proto] = protocol_counts.get(proto, 0) + 1
+
+    data = {
+        "meta": {
+            "total_packets": total_packets,
+            "unique_protocols": sorted(protocol_counts.keys()),
+            "protocol_counts": protocol_counts,
+        },
+        "packets": [],
+    }
+
     for p in packets:
         data["packets"].append({
             "packet_idx": p["packet_idx"],
-            "protocols": [{"protocol": proto} for proto in p["protocols"]]
+            "protocols": [{"protocol": proto} for proto in p["protocols"]],
         })
+
     out_json_path.parent.mkdir(parents=True, exist_ok=True)
     with out_json_path.open("w") as f:
         json.dump(data, f, indent=2)
+
 
 
 def write_csv(packets, out_csv_path: Path):

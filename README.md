@@ -1,4 +1,54 @@
-# Final Project Proposal
+# OSI Encapsulation Explorer – CECS 478 Final Project
+
+This repository contains the **working vertical slice** for our CECS 478 Final Project.  
+The system demonstrates the OSI encapsulation process through a reproducible, Dockerized pipeline:
+
+> **echo → encrypt → capture → analyze**
+
+The vertical slice runs completely inside Docker and produces **JSON, CSV, and log artifacts** under `artifacts/release/`.
+
+## 1. Clone the repository
+
+```bash
+git clone https://github.com/MangGlang/CECS478_Final_Project.git
+cd CECS478_Final_Project
+```
+
+## Run the required commands
+```
+make up && make demo
+```
+
+## Expected Output:
+```
+=== OSI Encapsulation Explorer (demo) ===
+Pipeline: echo -> encrypt -> capture -> analyze
+Packet 0: ETH -> IP -> TCP -> HTTP
+Packet 1: ETH -> IP -> TCP -> HTTP
+Packet 2: ETH -> IP -> TCP -> HTTP
+JSON summary written to: artifacts/release/summary.json
+CSV summary written to: artifacts/release/summary.csv
+Log written to: artifacts/release/run.log
+=========================================
+```
+
+## 2. Where to Find Artifacts
+```
+artifacts/release/run.log
+artifacts/release/summary.json
+artifacts/release/summary.csv
+```
+
+## 3. Testing
+```
+pip install pytest
+pytest
+```
+happy path and negative testing are under "tests" folder
+
+
+
+# Project Details:
 
 ### 1. Problem Statement
 

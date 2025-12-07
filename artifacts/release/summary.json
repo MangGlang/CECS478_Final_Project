@@ -1,4 +1,19 @@
 {
+  "meta": {
+    "total_packets": 3,
+    "unique_protocols": [
+      "ETH",
+      "HTTP",
+      "IP",
+      "TCP"
+    ],
+    "protocol_counts": {
+      "ETH": 3,
+      "IP": 3,
+      "TCP": 3,
+      "HTTP": 3
+    }
+  },
   "packets": [
     {
       "packet_idx": 0,
