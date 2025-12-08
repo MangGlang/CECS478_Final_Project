@@ -1,3 +1,5 @@
+[![CI](https://github.com/MangGlang/CECS478_Final_Project/actions/workflows/ci.yml/badge.svg)](https://github.com/MangGlang/CECS478_Final_Project/actions/workflows/ci.yml)
+
 # OSI Encapsulation Explorer – CECS 478 Final Project
 
 ### Vertical Slide Demo 
