@@ -1,6 +1,6 @@
 [![CI](https://github.com/MangGlang/CECS478_Final_Project/actions/workflows/ci.yml/badge.svg)](https://github.com/MangGlang/CECS478_Final_Project/actions/workflows/ci.yml)
 
-# OSI Encapsulation Explorer – CECS 478 Final Project
+# OSI Encapsulation Explorer v1.0.0 RELEASE – CECS 478 Final Project
 
 ### Vertical Slide Demo 
 ![Demo GIF](https://raw.githubusercontent.com/MangGlang/CECS478_Final_Project/main/assets/demo.gif)
